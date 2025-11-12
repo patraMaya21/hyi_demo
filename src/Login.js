@@ -13,7 +13,6 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import { storeTokens } from './utils/storage';
 import { loginUser } from './api/authApi';
-import { useNavigation } from '@react-navigation/native';
 
 const { height } = Dimensions.get('window');
 
@@ -22,7 +21,6 @@ export default function Login({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const navigation = useNavigation();
 
  const handleLogin = async () => {
   if (!email || !password) {

@@ -23,11 +23,9 @@ export const loginUser = async (username, password) => {
   try {
     data = JSON.parse(text);
   } catch {
-    console.log('Raw response:', text);
+    // console.log('Raw response:', text);
     throw new Error('Server returned an invalid response.');
   }
-
-  console.log('Login response:', data);
 
   if (!response.ok || data.error) {
     throw new Error(data.error_description || 'Invalid credentials');
